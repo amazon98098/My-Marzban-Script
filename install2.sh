@@ -13,9 +13,6 @@ if pgrep -x "RTT" > /dev/null; then
 	echo "Done"
 fi
 
-DISTRO="$(awk -F= '/^NAME/{print tolower($2)}' /etc/os-release|awk 'gsub(/[" ]/,x) + 1')"
-DISTROVER="$(awk -F= '/^VERSION_ID/{print tolower($2)}' /etc/os-release|awk 'gsub(/[" ]/,x) + 1')"
-
 update_os() {
 apt-get -o Acquire::ForceIPv4=true update
 apt-get -o Acquire::ForceIPv4=true install -y software-properties-common
@@ -81,43 +78,24 @@ echo "3.Exit"
 read -r -p "Select Number(Default is: 3):" CHS
 
 case $CHS in
-    1)  echo "Be carefull SSH port must under 23"
-    echo "Multiport is activated all ports above 22 were forwarded"
-    read -r -p "RTT PASS(Default is: Armani@bash): " TOPASS
-    TOPASS=${TOPASS:-"Armani@bash"}
-    read -r -p "RTT SNI(Default is: cloudflare.com): " SNI
-    SNI=${SNI:-"cloudflare.com"}
-    read -r -p "RTT Restart Time(Default is: 24): " TERM
-    TERM=${TERM:-"24"}
-    sleep 3
-    update_os
-    rtt_instller
-    iranserver
-    echo
-    echo "=== Finished ==="
-    echo
-    sleep 3
-    exit ;;
-    2)     echo "Be carefull SSH port must under 23"
-    echo "Multiport is activated all ports above 22 were forwarded"
-    read -r -p "RTT IP(Enter Iran IP): " EXIP
-    read -r -p "RTT PASS(Default is: Armani@bash): " TOPASS
-    TOPASS=${TOPASS:-"Armani@bash"}
-    read -r -p "RTT SNI(Default is: cloudflare.com): " SNI
-    SNI=${SNI:-"cloudflare.com"}
-    read -r -p "RTT Restart Time(Default is: 24): " TERM
-    TERM=${TERM:-"24"}
-    sleep 3
-    update_os
-    rtt_instller
-    externalserver
-    echo
-    echo "=== Finished ==="
-    echo
-    sleep 3
-    exit ;;
-    3)      exit_badly ;;
-
+    1)
+#    echo "Be carefull SSH port must under 23"
+#    read -r -p "RTT PASS(Default is: Armani@bash): " TOPASS
+#    TOPASS=${TOPASS:-"Armani@bash"}
+#    read -r -p "RTT SNI(Default is: cloudflare.com): " SNI
+#    SNI=${SNI:-"cloudflare.com"}
+#    read -r -p "RTT Restart Time(Default is: 24): " TERM
+#    TERM=${TERM:-"24"}
+#    sleep 3
+#    update_os
+#    iranserver
+#    echo
+#    echo "=== Finished ==="
+#    echo
+#    sleep 3
+#    exit ;;
+    echo CHS
     *)   echo "Done."; exit 1 ;;
 
 esac
+
