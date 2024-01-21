@@ -491,24 +491,21 @@ read -r -p "Select Number(Default is: 1):" COMMAND
 
 case $COMMAND in
     1)  add_node
-	echo
+	  echo
     echo "=== Finished ==="
     echo
-   # sleep 1
     exit ;;
     2)  update_node
     echo
     echo "=== Finished ==="
     echo
-   # sleep 3
     exit ;;
     3)  backup
     echo
     echo "=== Finished ==="
     echo
-   # sleep 3
     exit ;;
-    
+
     *)   echo "Done."; exit 1 ;;
 
 esac
