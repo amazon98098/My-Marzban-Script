@@ -11,12 +11,12 @@ port4=$input_num
 port5=$input_num
 port6=$input_num
 
-port1+=20
-port2+=21
-port3+=40
-port4+=41
-port5+=60
-port6+=61
+port1+=10
+port2+=11
+port3+=20
+port4+=21
+port5+=30
+port6+=31
 
 sudo apt update && sudo apt upgrade -y
 
