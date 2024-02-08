@@ -1,0 +1,323 @@
+{
+    "log": {
+        "loglevel": "info"
+    },
+    "inbounds": [
+        {
+            "tag": "VLESS + WS + TLS",
+            "listen": "0.0.0.0",
+            "port": 2053,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {},
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "google.com",
+                    "certificates": [
+                        {
+                            "ocspStapling": 3600,
+                            "certificateFile": "/var/lib/marzban/certs/fullchain.pem",
+                            "keyFile": "/var/lib/marzban/certs/key.pem"
+                        }
+                    ],
+                    "minVersion": "1.2",
+                    "cipherSuites": "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "VLESS + WS + TLS 1",
+            "listen": "0.0.0.0",
+            "port": 2096,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {},
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "google.com",
+                    "certificates": [
+                        {
+                            "ocspStapling": 3600,
+                            "certificateFile": "/var/lib/marzban/certs/fullchain.pem",
+                            "keyFile": "/var/lib/marzban/certs/key.pem"
+                        }
+                    ],
+                    "minVersion": "1.2",
+                    "cipherSuites": "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "TCP Server 1",
+            "listen": "0.0.0.0",
+            "port": 2053,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "tcpSettings": {},
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "dash.cloudflare.com:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "dash.cloudflare.com"
+                    ],
+                    "privateKey": "-OR62ZEIXyK-m6p1-G5Q7KDY7ot9O8EnYGcS26sjz3s",
+                    "shortIds": [
+                        "",
+                        "0d55d8bd2c4ca183"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "GRPC Server 1",
+            "listen": "0.0.0.0",
+            "port": 999,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "grpc",
+                "grpcSettings": {
+                    "serviceName": "999vless"
+                },
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "dash.cloudflare.com:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "dash.cloudflare.com"
+                    ],
+                    "privateKey": "EIX5f_PCuhakFeKr00-3FHI1vr0IaPskNxp0n3xh6ns",
+                    "shortIds": [
+                        "cc9da4cdd701119d"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "TCP Server 2",
+            "listen": "0.0.0.0",
+            "port": 1011,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "tcpSettings": {},
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "dash.cloudflare.com:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "dash.cloudflare.com"
+                    ],
+                    "privateKey": "-OR62ZEIXyK-m6p1-G5Q7KDY7ot9O8EnYGcS26sjz3s",
+                    "shortIds": [
+                        "",
+                        "0d55d8bd2c4ca183"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "GRPC Server 2",
+            "listen": "0.0.0.0",
+            "port": 1010,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "grpc",
+                "grpcSettings": {
+                    "serviceName": "999vless"
+                },
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "dash.cloudflare.com:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "dash.cloudflare.com"
+                    ],
+                    "privateKey": "EIX5f_PCuhakFeKr00-3FHI1vr0IaPskNxp0n3xh6ns",
+                    "shortIds": [
+                        "cc9da4cdd701119d"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "Tunnel TCP 1",
+            "listen": "0.0.0.0",
+            "port": 1250,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "tcpSettings": {},
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "dash.cloudflare.com:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "dash.cloudflare.com"
+                    ],
+                    "privateKey": "-OR62ZEIXyK-m6p1-G5Q7KDY7ot9O8EnYGcS26sjz3s",
+                    "shortIds": [
+                        "",
+                        "0d55d8bd2c4ca183"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        },
+        {
+            "tag": "Tunnel GRPC 1",
+            "listen": "0.0.0.0",
+            "port": 1260,
+            "protocol": "vless",
+            "settings": {
+                "clients": [],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "grpc",
+                "grpcSettings": {
+                    "serviceName": "999vless"
+                },
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "dash.cloudflare.com:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "dash.cloudflare.com"
+                    ],
+                    "privateKey": "EIX5f_PCuhakFeKr00-3FHI1vr0IaPskNxp0n3xh6ns",
+                    "shortIds": [
+                        "cc9da4cdd701119d"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "DIRECT"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "BLOCK"
+        }
+    ],
+    "routing": {
+        "rules": [
+            {
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "BLOCK",
+                "type": "field"
+            },
+            {
+                "domain": [
+                    "geosite:private"
+                ],
+                "outboundTag": "BLOCK",
+                "type": "field"
+            },
+            {
+                "protocol": [
+                    "bittorrent"
+                ],
+                "outboundTag": "BLOCK",
+                "type": "field"
+            }
+        ]
+    }
+}
