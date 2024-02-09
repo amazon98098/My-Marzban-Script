@@ -31,7 +31,7 @@ add_node() {
 
   curl -o var/lib/marzban/certs/key.pem https://github.com/Ali-Hashemi/My-Marzban-Script/blob/main/myblog-backup/var/certs/key.pem;
 
-    marzban up;
+  marzban up;
 }
 
 #echo "Select Operation :"
