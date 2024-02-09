@@ -8,7 +8,7 @@ add_node() {
 
   sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)" @ install;
 
-#  marzban down;
+  marzban down;
 #
 #  rm -r opt/marzban;
 #  mkdir opt/marzban;
