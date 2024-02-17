@@ -251,70 +251,88 @@ docker compose down && docker compose up -d;
 
 downgrade_xray(){
 
-  apt install wget unzip
+apt install wget unzip
 
-  mkdir -p /var/lib/marzban/xray-core && cd /var/lib/marzban/xray-core
+mkdir -p /var/lib/marzban/xray-core && cd /var/lib/marzban/xray-core
 
-  wget https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-linux-64.zip
+wget https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-linux-64.zip
 
-  unzip Xray-linux-64.zip
+unzip Xray-linux-64.zip
 
-  rm Xray-linux-64.zip
+rm Xray-linux-64.zip
+
+input_num=1
+
+read -r -p "Enter Starting Two Digits : " input_num
+
+port1=$input_num
+port2=$input_num
+port3=$input_num
+port4=$input_num
+port5=$input_num
+port6=$input_num
+
+port1+=10
+port2+=11
+port3+=20
+port4+=21
+port5+=30
+port6+=31
   
-  rm Marzban-node/docker-compose.yml
+rm Marzban-node/docker-compose.yml
 
-  echo "services:" >> Marzban-node/docker-compose.yml
-  echo "  node-amz:" >> Marzban-node/docker-compose.yml
-  echo "    # build: ." >> Marzban-node/docker-compose.yml
-  echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
-  echo "    restart: always" >> Marzban-node/docker-compose.yml
-  echo "    network_mode: host" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    environment:" >> Marzban-node/docker-compose.yml
-  echo "      SERVICE_PORT: 4310" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_API_PORT: 4311" >> Marzban-node/docker-compose.yml
-  echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_amz.pem" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    volumes:" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "  node-dag:" >> Marzban-node/docker-compose.yml
-  echo "    # build: ." >> Marzban-node/docker-compose.yml
-  echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
-  echo "    restart: always" >> Marzban-node/docker-compose.yml
-  echo "    network_mode: host" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    environment:" >> Marzban-node/docker-compose.yml
-  echo "      SERVICE_PORT: 4320" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_API_PORT: 4321" >> Marzban-node/docker-compose.yml
-  echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_dag.pem" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    volumes:" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "  node-myblog:" >> Marzban-node/docker-compose.yml
-  echo "    # build: ." >> Marzban-node/docker-compose.yml
-  echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
-  echo "    restart: always" >> Marzban-node/docker-compose.yml
-  echo "    network_mode: host" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    environment:" >> Marzban-node/docker-compose.yml
-  echo "      SERVICE_PORT: 4330" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_API_PORT: 4331" >> Marzban-node/docker-compose.yml
-  echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_myblog.pem" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    volumes:" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
+echo "services:" >> Marzban-node/docker-compose.yml
+echo "  node-amz:" >> Marzban-node/docker-compose.yml
+echo "    # build: ." >> Marzban-node/docker-compose.yml
+echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
+echo "    restart: always" >> Marzban-node/docker-compose.yml
+echo "    network_mode: host" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "    environment:" >> Marzban-node/docker-compose.yml
+echo "      SERVICE_PORT: $port1" >> Marzban-node/docker-compose.yml
+echo "      XRAY_API_PORT: $port2" >> Marzban-node/docker-compose.yml
+echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_amz.pem" >> Marzban-node/docker-compose.yml
+echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "    volumes:" >> Marzban-node/docker-compose.yml
+echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
+echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "  node-dag:" >> Marzban-node/docker-compose.yml
+echo "    # build: ." >> Marzban-node/docker-compose.yml
+echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
+echo "    restart: always" >> Marzban-node/docker-compose.yml
+echo "    network_mode: host" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "    environment:" >> Marzban-node/docker-compose.yml
+echo "      SERVICE_PORT: $port3" >> Marzban-node/docker-compose.yml
+echo "      XRAY_API_PORT: $port4" >> Marzban-node/docker-compose.yml
+echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_dag.pem" >> Marzban-node/docker-compose.yml
+echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "    volumes:" >> Marzban-node/docker-compose.yml
+echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
+echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "  node-myblog:" >> Marzban-node/docker-compose.yml
+echo "    # build: ." >> Marzban-node/docker-compose.yml
+echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
+echo "    restart: always" >> Marzban-node/docker-compose.yml
+echo "    network_mode: host" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "    environment:" >> Marzban-node/docker-compose.yml
+echo "      SERVICE_PORT: $port5" >> Marzban-node/docker-compose.yml
+echo "      XRAY_API_PORT: $port6" >> Marzban-node/docker-compose.yml
+echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_myblog.pem" >> Marzban-node/docker-compose.yml
+echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
+echo "" >> Marzban-node/docker-compose.yml
+echo "    volumes:" >> Marzban-node/docker-compose.yml
+echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
+echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
 
-  cd Marzban-node;
+cd Marzban-node;
 
-  docker compose down && docker compose up -d;
+docker compose down && docker compose up -d;
 
 }
 
