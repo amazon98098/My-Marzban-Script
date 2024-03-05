@@ -22,7 +22,7 @@ create_docker_file(){
   rm Marzban-node/docker-compose.yml
 
   echo "services:" >> Marzban-node/docker-compose.yml
-  echo "  node-amz:" >> Marzban-node/docker-compose.yml
+  echo "  node-amin:" >> Marzban-node/docker-compose.yml
   echo "    # build: ." >> Marzban-node/docker-compose.yml
   echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
   echo "    restart: always" >> Marzban-node/docker-compose.yml
@@ -36,7 +36,7 @@ create_docker_file(){
   echo "    volumes:" >> Marzban-node/docker-compose.yml
   echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
   echo "" >> Marzban-node/docker-compose.yml
-  echo "  node-dag:" >> Marzban-node/docker-compose.yml
+  echo "  node-yashar:" >> Marzban-node/docker-compose.yml
   echo "    # build: ." >> Marzban-node/docker-compose.yml
   echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
   echo "    restart: always" >> Marzban-node/docker-compose.yml
