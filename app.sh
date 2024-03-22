@@ -258,6 +258,26 @@ add_node() {
   create_docker_file "$input_num"
 }
 
+add_node_with_downgrade() {
+  cd /root
+
+  input_num=1
+
+  read -r -p "Enter a Number: " input_num
+
+  sudo apt update && sudo apt upgrade -y
+
+  curl -fsSL https://get.docker.com | sh
+
+  git clone https://github.com/Gozargah/Marzban-node
+
+  install_ssh
+
+  create_docker_file "$input_num"
+
+  downgrade_xray "$input_num"
+}
+
 update_node() {
   cd /root
 
@@ -272,10 +292,6 @@ downgrade_xray(){
 
   cd /root
 
-  input_num=1
-
-  read -r -p "Enter Starting Two Digits : " input_num
-
   apt install wget unzip
 
   rm -r /var/lib/marzban/xray-core
@@ -288,7 +304,7 @@ downgrade_xray(){
 
   rm Xray-linux-64.zip
 
-  create_docker_file_for_downgrade "$input_num"
+  create_docker_file_for_downgrade "$1"
 }
 
 backup() {
@@ -533,7 +549,7 @@ echo -e "\nDone\n"
 echo "Select Operation :"
 echo "1. Add Node"
 echo "2. Update Node"
-echo "3. Downgrade Xray"
+echo "3. Add Node with Downgrade"
 echo "4. Backup"
 read -r -p "Select Number(Default is: 1):" COMMAND
 
@@ -548,7 +564,7 @@ case $COMMAND in
     echo "=== Finished ==="
     echo
     exit ;;
-    3)  downgrade_xray
+    3)  add_node_with_downgrade
     echo
     echo "=== Finished ==="
     echo
