@@ -150,32 +150,32 @@ install_ssh(){
 
   rm /var/lib/marzban-node/ssl_client_cert_myblog.pem
 
- echo "-----BEGIN CERTIFICATE-----">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+  echo "-----BEGIN CERTIFICATE-----">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
 echo "MIIEnDCCAoQCAQAwDQYJKoZIhvcNAQENBQAwEzERMA8GA1UEAwwIR296YXJnYWgw">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "IBcNMjQwNzI0MTAxNzA2WhgPMjEyNDA2MzAxMDE3MDZaMBMxETAPBgNVBAMMCEdv">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "emFyZ2FoMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyoXohiImsrlb">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "L7aPaIjWgz4ve0HuxcVC1tg29dF1cm9SJUlrwYsYxcLI12xfKzZkyUyHVQxUebWF">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "xQgH894AZuZtE1HqsH+zyE1vZRwllMWm01+GFUYAWRE6GBZmhukVUYrCjHLdc9zw">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "TM9HcKufIoYK+ERlx+kXVIb1auGZ/NqXwaaejJmxixCiWBo4o0Y7LplH2kJV9H0z">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "n7cxtHxNDsEUajCOjKlGKoIE4ZYzrS51j9V/nxZH+cdV2lMsnq1oxFOrdnIEe6y+">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "yEVl/+lH69n4A+AKhhhdxC1NS8XmasRI932qN5mRJbwSMHrzhfhji9WJAOtkJNTz">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "XYpBUwe/Dbcnvy59P28rHcXomaDlmBP/AwyVs3gCfbRCHZ92VvyOcOpAKVU9okmP">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "T3IR3jXMmK5b1YWLpx6imDmxtenGExh0fYUCv568d7i3LTdoIM+wTEalxVBAuvFb">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "1xusZ2cBiqGgWYs5PWV1ReQKzOC6tCsqmlukTpNbZfofskYUUST3fQWVw9p9F5qI">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "uzQ2/F0iCf5yJobFwX3vfXBl63VyW02TFwCEEcJ3Jm7pYUq7H0s1q29WSk3fbWfc">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "cdJWF78htZUfpAuT+1h9RnNM8rjSZqLERZl6vAtgolxSh0QfvjDurfwPf9qE+WPr">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "jJMoaCJm2HEd0m7Z4sQGIpKkqbCdUAsCAwEAATANBgkqhkiG9w0BAQ0FAAOCAgEA">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "IqtBAUiSu2fsHPSj/Wen9KpJ7D4G7DDXAo1+yZWIXW2TPsl96Ssos+3nFIu9drMM">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "r0fbABqz/jXWjMMAy0ZrJP7aT3cdqON8F5Pqch7U8Cjv0AlVnFPR3/8Rhx8f7Gyi">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "xVPVhxzHWw1G1Hw7si5Tf7kj30KhZyV5JKJSQqOYnD94anCf1Ausk1zXmDX/P+Q8">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "PxzivzGdHOfp5PzJx9LZUsSD4iCaDuWsg+T6P+Uw4RyOgGO/f2eK1g/GbRddyl9S">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "mZkmSudwIt9w1Iho63FhNtGytSfo+prsy/Ids48AJl+Rb/jmzLiZ6mZMjNngcWc2">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "HjNve83WaxCBVTPYkKYjSxqwkgs3dRptYwAS8v3M9NZpiWPcXxPrATCO834Ueppq">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "5CWeDBPgMuIZj8BaAFHnhFVOXE/hBObFC5M+n19zEXOM0VwpX/OQTGqRoP7Fpx8c">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "FNZB128LJKO7eYrkbtz/lqgsh6FqLrSn/EI7Qls68XE+GScylmUCQlp6wY16Sk4u">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "xYzrfvHWxCPy76uyPilTmAzR8kNvcJ2BlVeOvbMcxA7JLnI9J3n8/6aSgt/CkqUA">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "Mj/NQwaLLgmSx+N1REaBlz3Z96KXng1mYpXNi6v5eHqneexD/LTOvXfkOeE2lcJP">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
-echo "mFNuO1kvq5A0ksxOWAKmsgkZBHcy/EyjoqFgoL5WE94=">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "IBcNMjQxMDI1MTgzMzM4WhgPMjEyNDEwMDExODMzMzhaMBMxETAPBgNVBAMMCEdv">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "emFyZ2FoMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAnAMbhgqyEV4f">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "OiP3dgvEm3oJ/Lzpse6UtfPgUjuVp2yOm7izuobYFAGZWaiRNP8Y02HczF5nGMO/">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "SgheCy4xP/fQHvrkeJR4K5j85Dc8446egiaXmRp07KIYwUxnhf7Sm9mBEaB9N0fg">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "UApP4gwUwT0wgs8mIoeEqzuzXC6mCPCim/DuDdSiEQQFH2TUKJ7HtGEVghxkn5gf">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "KKQ/xy4wS+otvDfxLEibL4gbB19fhhbFsndwcGbGZIu0Urg2JNPHTbL5GelhvIbk">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "IGwBhmSFY8q3DbXf65m0bUge1zT6Qh69jinhBO7tsUIorkgCl8Kq0vi63JFMynnF">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "VsM5WooCHz7xJzwXF+sox/12L2rAlvjF/T+dY9svy0CwrKc+ePoyv9hJHBxMnDqe">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "QVLFI/Yez4aXQZMs0zlmIVgxo90A67HM7Tlc1qR+ZDy3FbYXl58JRXLmgUKpGOpX">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "fd58kY8kV8Eu7fdUqwvUqrZJ//TgaBvLfek/140m0YngpcufG4mh729GkY3VA8HW">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "L9ebatr5HF+VglR90xttu9d8guIvahbaavvA6z+g2tsKh4ZDPFqIc0mgy33hLACk">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "k/fCdftZBqKarxVhUBFVJxoBEfmAOFLcZaSikEzGP7hzIaujAMj9G3/uZYaOBbpf">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "ZPoZWW0teaqEpTG2D+eBfQUO7gNCavsCAwEAATANBgkqhkiG9w0BAQ0FAAOCAgEA">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "Lu+aMbur/tT1++CTc4gW+WBxKbiquiMb644xlcocwj5Sd8Q0LMGZZCBmRa8zUGm/">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "SACto+FPsLcttXzZH04VZVY0ho5BcJtAteD/etEB+XXMSqHjRIWutXo2+YdV7fUm">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "J2nI3WLT7eEPVxzV2b6qu491LkBC92r74bAK30u//+eCa0ZQdBYfOQ9S4roIzorW">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "zdbb7OI/HTJ13RqmJURvzgQjSOO0QhL8pf++nZCK39ZGn/x98zQr8XaOM3jt5kLm">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "KyGKs1MkJWE3wzUPJJpZ8eY8B2ghrC+i1Uydym07K6kuhkgc9SoBKTtqA+l5Zrf4">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "GuCgHmQeCgUiwOTpEiumGXuCmfwVUYd/gkoCyKKmyLPW/rV+E/RykHv8mznLvyzp">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "/lgDB6CdjQdN61LFZ5ns3bipVLHS+Ik3lkVg+rC5gY1zQVZ1FSgKqR+eTzN9/Yr7">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "cHX2opXgk44H3GYWwLWk4fdlm8sTC+aNdhnJ9VUNBqFduFapyFt9mjLGRZfFUkRd">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "l0tJjgNtViADPFPICQ/aRoflpge8CaVbsQCazUttCRTc904CbwPIrXrZceOuBN6M">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "j5h+XBEe3zN7GB4bPE4TMnDI5QDFSU3EiQ6ry9qstXTpM9RwKG8CUkd8yWzsjVmX">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
+echo "h4xLbS+bGYrx7YW9k27Bv+b8L6S1FeqLgHBfE9PV7cE=">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
 echo "-----END CERTIFICATE-----">> /var/lib/marzban-node/ssl_client_cert_myblog.pem;
 }
 
