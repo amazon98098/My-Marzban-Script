@@ -36,20 +36,6 @@ create_docker_file(){
   echo "    volumes:" >> Marzban-node/docker-compose.yml
   echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
   echo "" >> Marzban-node/docker-compose.yml
-  echo "  node-dag:" >> Marzban-node/docker-compose.yml
-  echo "    # build: ." >> Marzban-node/docker-compose.yml
-  echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
-  echo "    restart: always" >> Marzban-node/docker-compose.yml
-  echo "    network_mode: host" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    environment:" >> Marzban-node/docker-compose.yml
-  echo "      SERVICE_PORT: $port3" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_API_PORT: $port4" >> Marzban-node/docker-compose.yml
-  echo "      SSL_CLIENT_CERT_FILE: "/var/lib/marzban-node/ssl_client_cert_dag.pem"" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    volumes:" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
   echo "  node-myblog:" >> Marzban-node/docker-compose.yml
   echo "    # build: ." >> Marzban-node/docker-compose.yml
   echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
@@ -99,22 +85,6 @@ create_docker_file_for_downgrade(){
   echo "      SERVICE_PORT: $port1" >> Marzban-node/docker-compose.yml
   echo "      XRAY_API_PORT: $port2" >> Marzban-node/docker-compose.yml
   echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_amz.pem" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    volumes:" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban-node:/var/lib/marzban-node" >> Marzban-node/docker-compose.yml
-  echo "      - /var/lib/marzban:/var/lib/marzban" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "  node-dag:" >> Marzban-node/docker-compose.yml
-  echo "    # build: ." >> Marzban-node/docker-compose.yml
-  echo "    image: gozargah/marzban-node:latest" >> Marzban-node/docker-compose.yml
-  echo "    restart: always" >> Marzban-node/docker-compose.yml
-  echo "    network_mode: host" >> Marzban-node/docker-compose.yml
-  echo "" >> Marzban-node/docker-compose.yml
-  echo "    environment:" >> Marzban-node/docker-compose.yml
-  echo "      SERVICE_PORT: $port3" >> Marzban-node/docker-compose.yml
-  echo "      XRAY_API_PORT: $port4" >> Marzban-node/docker-compose.yml
-  echo "      SSL_CLIENT_CERT_FILE: /var/lib/marzban-node/ssl_client_cert_dag.pem" >> Marzban-node/docker-compose.yml
   echo "      XRAY_EXECUTABLE_PATH: "/var/lib/marzban/xray-core/xray"" >> Marzban-node/docker-compose.yml
   echo "" >> Marzban-node/docker-compose.yml
   echo "    volumes:" >> Marzban-node/docker-compose.yml
@@ -177,37 +147,6 @@ install_ssh(){
   echo "71OZgaRifyRvRtjyt1FhEjJKAlt56fOLiutLngV971Q=">> /var/lib/marzban-node/ssl_client_cert_amz.pem
   echo "-----END CERTIFICATE-----">> /var/lib/marzban-node/ssl_client_cert_amz.pem
   echo "">> /var/lib/marzban-node/ssl_client_cert_amz.pem
-
-  rm /var/lib/marzban-node/ssl_client_cert_dag.pem
-
-  echo "-----BEGIN CERTIFICATE-----">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "MIIEnDCCAoQCAQAwDQYJKoZIhvcNAQENBQAwEzERMA8GA1UEAwwIR296YXJnYWgw">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "IBcNMjMxMTE4MTk1MzA3WhgPMjEyMzEwMjUxOTUzMDdaMBMxETAPBgNVBAMMCEdv">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "emFyZ2FoMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2pxPV2xJogDZ">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "y2J869WOrhLL3SWAHBWsbSQtPmSu4b/xFyItcrv4bHyPtHo1hsE0tvXMLpPminjM">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "y/cHopjOZXBx+3OdQaE4fbQhb6d2FJAl7Q9tkZVr2a/NCwvDoeXogAf7pwGX7+iu">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "QkO1Dlz2weyxbNxNrTxz1r/Q9MDcZhE8Q0THNq5pJ/eZT7G56EY9pkidjJ/zka2C">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "6woV893T8bG6mOlEfxwj5uV56uKQ+1w28Hx7AQHEdJ38i2P7BtChldT/v9He3JKD">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "tfUToggC2SRt74jIRqj3zid4mkx6RPPmPM8SJ2ODh0XKo552nL1LdfWvukzURHiF">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "AsyFxSPkyDAxMMCtPK9WvPRQnMP5j3AsNZ85ZtDJJfeLi5ALPf68iK0dfoinlCqy">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "nIH1hxNNceygx/CB0JsXMBz/7k6hFYW3FtONHsDQvS484c/HRCxQcPpasa5id6pD">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "HAojevXcTjn1/c2+5LGaX8/OXw6gCsffP8y0kvzTbSkcSm/UIQbTVG1wxwJvaT4L">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "vx1kdi/Oc+n7BsWFPnVtQ5315Ye6D6CS34KrNlh39WHdj/eggKCPPQ5/MEO318Lb">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "IT6fMG+AhuATqVtY87EvxhYa7i7UPrGFisrIDk7gFfha8PwtgsO7fTz/Hv4vhkI5">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "wab8uBT1shRIkoejAyKmr1EtNt9lpU8CAwEAATANBgkqhkiG9w0BAQ0FAAOCAgEA">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "BrvqVYPrVumY2TW4mZaVUGn/VBgLn/sc6lOaxf4a4/R9enSC8xxvx0xVJWn9ZQQP">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "wvsx38oQJMdivUgFFY2tcN/BYbjVT44Wkzer4UG5R1U+RpZ4v7NOWG5a96iwweD5">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "wcl7DZ4IvBmD//O0I0aTSpc7YIlTqHUIVZusmp2bxAjAopttcAqthr+xSi//ThJA">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "Nx+vEpSNWo0TG+YfWmtgf0REp7Tyz832eN3L95VP8KpqtO7bBXOjGJ+7HAT/M/Sl">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "rHi9TERfkeUus+QxZuj8tEuTf9/+46U09wkuP0ceCQQDdSaQ6IiQ0xTzlMJ0RMvE">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "1O8E3LmCuc9BQI3pFHw+RFsLEedjo3sXZq4p9JNy/2bGLrWOso52XEM+fCMiXF6v">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "N+KDqx+ILeTkyo9H5aERsLxxjSkZHbXssIIGi9Qgk1o6W6Mijh+VpfUDdQPHedF8">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "jtZuC+zi0s7ll0L6WeFBiNV9SyMPUlPh0FozLBN4ySqYPoletw1LqBTatMuwSt4N">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "aRrE5NLF6XDa9g1hpg1GW9GZTizt5/8mkv5lE8x92p680Ung65w7BhlFLvF21tSH">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "g01uR5dQ0gXcWVRspEpRP7DZuziEJmYTqCPdeDB7YT+J+gbOyTJo32y01QJuCm9p">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "zqrlBd1DKTh6EfP58h2mNkYOgPTTy0Gi0Aej+V5uuZk=">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "-----END CERTIFICATE-----">> /var/lib/marzban-node/ssl_client_cert_dag.pem
-  echo "">> /var/lib/marzban-node/ssl_client_cert_dag.pem
 
   rm /var/lib/marzban-node/ssl_client_cert_myblog.pem
 
