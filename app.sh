@@ -257,7 +257,7 @@ add_node() {
 
   create_docker_file "$input_num"
 
-  downgrade_xray "$input_num"
+  #downgrade_xray "$input_num"
 }
 
 update_node() {
