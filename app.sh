@@ -253,6 +253,29 @@ downgrade_xray(){
   create_docker_file_for_downgrade "$1"
 }
 
+telegram_proxy(){
+  sudo apt update && sudo apt upgrade -y
+
+  apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+  add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" -y
+
+  apt install docker-ce -y
+
+  apt install docker-compose-plugin -y
+
+  curl -L -o mtp_install.sh https://git.io/fj5ru && bash mtp_install.sh > prox.txt
+
+  grep 'Fake-TLS hex' ./prox.txt > finalprox.txt
+
+  sed -i 's\Fake-TLS hex:    \\g' finalprox.txt
+
+  cat finalprox.txt
+
+}
+
 backup() {
 # Bot token
 # گرفتن توکن ربات از کاربر و ذخیره آن در متغیر tk
@@ -496,6 +519,7 @@ echo "Select Operation :"
 echo "1. Add Node"
 echo "2. Update Node"
 echo "3. backup"
+echo "4. Telegram Proxy"
 read -r -p "Select Number(Default is: 1):" COMMAND
 
 case $COMMAND in
@@ -514,7 +538,12 @@ case $COMMAND in
     echo "=== Finished ==="
     echo
     exit ;;
-
+	4)  telegram_proxy
+    echo
+    echo "=== Finished ==="
+    echo
+    exit ;;
+	
     *)   echo "Done."; exit 1 ;;
 
 esac
