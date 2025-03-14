@@ -266,14 +266,7 @@ telegram_proxy(){
 
   apt install docker-compose-plugin -y
 
-  curl -L -o mtp_install.sh https://git.io/fj5ru && bash mtp_install.sh > prox.txt
-
-  grep 'Fake-TLS hex' ./prox.txt > finalprox.txt
-
-  sed -i 's\Fake-TLS hex:    \\g' finalprox.txt
-
-  cat finalprox.txt
-
+  curl -L -o mtp_install.sh https://git.io/fj5ru && bash mtp_install.sh
 }
 
 backup() {
