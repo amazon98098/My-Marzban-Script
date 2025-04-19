@@ -528,9 +528,10 @@ echo -e "\nDone\n"
 
 echo "Select Operation :"
 echo "1. Add Node"
-echo "2. Update Node"
-echo "3. backup"
-echo "4. Telegram Proxy"
+echo "2. Add Node Downgrade"
+echo "3. Update Node"
+echo "4. backup"
+echo "5. Telegram Proxy"
 read -r -p "Select Number(Default is: 1):" COMMAND
 
 case $COMMAND in
@@ -539,17 +540,22 @@ case $COMMAND in
     echo "=== Finished ==="
     echo
     exit ;;
-    2)  update_node
+    2)  add_node_downgrade
+	  echo
+    echo "=== Finished ==="
+    echo
+    exit ;;
+    3)  update_node
     echo
     echo "=== Finished ==="
     echo
     exit ;;
-    3)  backup
+    4)  backup
     echo
     echo "=== Finished ==="
     echo
     exit ;;
-	4)  telegram_proxy
+	5)  telegram_proxy
     echo
     echo "=== Finished ==="
     echo
