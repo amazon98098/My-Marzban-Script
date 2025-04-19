@@ -218,6 +218,24 @@ add_node() {
   install_ssh
 
   create_docker_file "$input_num"
+}
+
+add_node_downgrade() {
+  cd /root
+
+  input_num=1
+
+  read -r -p "Enter a Number: " input_num
+
+  sudo apt update && sudo apt upgrade -y
+
+  curl -fsSL https://get.docker.com | sh
+
+  git clone https://github.com/Gozargah/Marzban-node
+
+  install_ssh
+
+  create_docker_file "$input_num"
 
   downgrade_xray "$input_num"
 }
