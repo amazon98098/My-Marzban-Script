@@ -248,6 +248,16 @@ update_node() {
   read -r -p "Enter Starting Two Digits : " input_num
 
   create_docker_file "$input_num"
+}
+
+update_node_downgrade() {
+  cd /root
+
+  input_num=1
+
+  read -r -p "Enter Starting Two Digits : " input_num
+
+  create_docker_file "$input_num"
 
   downgrade_xray "$input_num"
 }
@@ -530,8 +540,9 @@ echo "Select Operation :"
 echo "1. Add Node"
 echo "2. Add Node Downgrade"
 echo "3. Update Node"
-echo "4. backup"
-echo "5. Telegram Proxy"
+echo "4. Update Node Downgrade"
+echo "5. backup"
+echo "6. Telegram Proxy"
 read -r -p "Select Number(Default is: 1):" COMMAND
 
 case $COMMAND in
@@ -550,12 +561,17 @@ case $COMMAND in
     echo "=== Finished ==="
     echo
     exit ;;
-    4)  backup
+    4)  update_node_downgrade
     echo
     echo "=== Finished ==="
     echo
     exit ;;
-	5)  telegram_proxy
+    5)  backup
+    echo
+    echo "=== Finished ==="
+    echo
+    exit ;;
+	6)  telegram_proxy
     echo
     echo "=== Finished ==="
     echo
