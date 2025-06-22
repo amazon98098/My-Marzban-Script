@@ -297,6 +297,18 @@ telegram_proxy(){
   curl -L -o mtp_install.sh https://git.io/fj5ru && bash mtp_install.sh
 }
 
+backhaul_tunnel(){
+	apt install python3 -y && sudo apt install python3-pip &&  pip install colorama && pip install netifaces && apt install curl -y
+	
+	pip3 install colorama
+	
+	sudo apt-get install python-pip -y  &&  apt-get install python3 -y && alias python=python3 && python -m pip install colorama && python -m pip install netifaces
+	
+	sudo apt update -y && sudo apt install -y python3 python3-pip curl && pip3 install --upgrade pip && pip3 install netifaces colorama requests
+	
+	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Azumi67/Backhaul_script/refs/heads/main/backhaul.sh)"
+}
+
 backup() {
 # Bot token
 # گرفتن توکن ربات از کاربر و ذخیره آن در متغیر tk
@@ -543,6 +555,7 @@ echo "3. Update Node"
 echo "4. Update Node Downgrade"
 echo "5. backup"
 echo "6. Telegram Proxy"
+echo "7. Backhaul Tunnel"
 read -r -p "Select Number(Default is: 1):" COMMAND
 
 case $COMMAND in
@@ -576,6 +589,12 @@ case $COMMAND in
     echo "=== Finished ==="
     echo
     exit ;;
+	7)  backhaul_tunnel
+    echo
+    echo "=== Finished ==="
+    echo
+    exit ;;
+	
 	
     *)   echo "Done."; exit 1 ;;
 
