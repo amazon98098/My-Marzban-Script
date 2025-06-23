@@ -306,7 +306,10 @@ backhaul_tunnel(){
 	
 	sudo apt update -y && sudo apt install -y python3 python3-pip curl && pip3 install --upgrade pip && pip3 install netifaces colorama requests
 	
-	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Azumi67/Backhaul_script/refs/heads/main/backhaul.sh)"
+	# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Azumi67/Backhaul_script/refs/heads/main/backhaul.sh)" 
+
+ 	bash -c "$(curl -Ls --ipv4 https://raw.githubusercontent.com/wafflenoodle/zenith-stash/refs/heads/main/backhaul.sh)" 
+ 	
 }
 
 backup() {
