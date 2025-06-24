@@ -308,7 +308,9 @@ backhaul_tunnel(){
 	
 	# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Azumi67/Backhaul_script/refs/heads/main/backhaul.sh)" 
 
- 	bash -c "$(curl -Ls --ipv4 https://raw.githubusercontent.com/wafflenoodle/zenith-stash/refs/heads/main/backhaul.sh)" 
+ 	# bash -c "$(curl -Ls --ipv4 https://raw.githubusercontent.com/wafflenoodle/zenith-stash/refs/heads/main/backhaul.sh)"
+
+  	bash <(curl -Ls --ipv4 http://script.backhaul.top/backhaul.sh)
  	
 }
 
